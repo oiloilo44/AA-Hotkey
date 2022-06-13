@@ -1,0 +1,19 @@
+{
+  "name": "Automation Anywhere Hotkey",
+  "description": "A360 커스텀 단축키",
+  "version": "1.1",
+  "manifest_version": 3,
+  "icons": {
+  "128": "browserAction/icon.png"
+  },
+  "action": {
+    "default_popup": "browserAction/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*/*edit"],
+      "js": ["contentScripts/script.js"],
+      "run_at": "document_end"
+    }
+  ]
+}
