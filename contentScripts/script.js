@@ -4,8 +4,7 @@ document.addEventListener('keydown', function (e) {
 
     e = e || window.event;
 
-    ///////////////////// Edit Task Bot 창에서만 동작 /////////////////////
-    if (editChk) {
+    if (editChk) { //
         if (e.altKey && (e.key === 't' || e.key === 'T')) {
             // Run
             run();
@@ -19,19 +18,18 @@ document.addEventListener('keydown', function (e) {
             expendCollapseAll();
 
         } else if (e.altKey && (e.key === 'w' || e.key === 'W')) {
-            // Go to a First node
-            goToaFirstNode();
+            // Go to the First node
+            goToTheFirstNode();
 
         } else if (e.altKey && (e.key === 's' || e.key === 'S')) {
-            // Go to a Last node
-            goToaLastNode();
+            // Go to the Last node
+            goToTheLastNode();
 
         } else if (e.altKey && (e.key === 'q' || e.key === 'Q')) {
             // Check only XPath
             checkOnlyXpath();
         }
     }
-    /////////////////////////////////////////////////////////////////////
 });
 
 
@@ -59,11 +57,11 @@ function expendCollapseAll() {
     }
 }
 
-function goToaFirstNode() {
+function goToTheFirstNode() {
     document.querySelector('div.taskbotlistnode-title--cursor').closest('div.taskbotlistnode--mode-edit').parentElement.querySelector('div.taskbotlistnode-title').click()
 }
 
-function goToaLastNode() {
+function goToTheLastNode() {
     let lastNode = document.querySelector('div.taskbotlistnode-title--cursor').closest('div.taskbotlistnode--mode-edit').parentElement.lastChild.querySelector('div.taskbotlistnode-title')
     if (lastNode == null)
         lastNode = document.querySelector('div.taskbotlistnode-title--cursor').closest('div.taskbotlistnode--mode-edit').parentElement.lastChild.previousSibling.querySelector('div.taskbotlistnode-title')
